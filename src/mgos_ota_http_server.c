@@ -115,10 +115,10 @@ static void mgos_ota_result_cb(struct update_context *ctx) {
   if (s_update_request_conn != NULL) {
     int code = (ctx->result > 0 ? 200 : 500);
     mg_send_response_line(s_update_request_conn, code,
-        "Content-Type: text/plain\r\n"
-        "Connection: close\r\n");
+                          "Content-Type: text/plain\r\n"
+                          "Connection: close\r\n");
     mg_printf(s_update_request_conn, "(%d) %s\r\n", ctx->result,
-        ctx->status_msg);
+              ctx->status_msg);
     s_update_request_conn->flags |= MG_F_SEND_AND_CLOSE;
     s_update_request_conn = NULL;
   }
@@ -147,8 +147,8 @@ static void update_handler(struct mg_connection *c, int ev, void *ev_data,
       struct http_message *hm = (struct http_message *) ev_data;
       if (updater_context_get_current() != NULL) {
         mg_send_response_line(c, 409,
-            "Content-Type: text/plain\r\n"
-            "Connection: close\r\n");
+                              "Content-Type: text/plain\r\n"
+                              "Connection: close\r\n");
         mg_printf(c, "Another update is in progress.\r\n");
         c->flags |= MG_F_SEND_AND_CLOSE;
         return;
@@ -180,8 +180,8 @@ static void update_handler(struct mg_connection *c, int ev, void *ev_data,
         struct update_context *ctx = updater_context_create();
         if (ctx == NULL) {
           mg_send_response_line(c, 409,
-              "Content-Type: text/plain\r\n"
-              "Connection: close\r\n");
+                                "Content-Type: text/plain\r\n"
+                                "Connection: close\r\n");
           mg_printf(c, "Failed to create updater context.\r\n");
           c->flags |= MG_F_SEND_AND_CLOSE;
           return;
