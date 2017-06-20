@@ -6,6 +6,8 @@
 #include "mgos_ota_http_server.h"
 #include "mgos_ota_http_client.h"
 
+#include "mgos_http_server.h"
+
 #include "common/cs_dbg.h"
 #include "fw/src/mgos_hal.h"
 #include "fw/src/mgos_mongoose.h"

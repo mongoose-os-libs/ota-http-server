@@ -9,6 +9,7 @@ config_schema:
   - ["update.enable_post", "b", true, {title : "Enable POST updates"}]
 
 libs:
+  - origin: https://github.com/mongoose-os-libs/http-server
   - origin: https://github.com/mongoose-os-libs/ota-http-client
 
 tags:
