@@ -9,11 +9,11 @@
 #include "mgos_http_server.h"
 
 #include "common/cs_dbg.h"
-#include "fw/src/mgos_hal.h"
-#include "fw/src/mgos_mongoose.h"
-#include "fw/src/mgos_sys_config.h"
-#include "fw/src/mgos_timers.h"
-#include "fw/src/mgos_utils.h"
+#include "mgos_hal.h"
+#include "mgos_mongoose.h"
+#include "mgos_sys_config.h"
+#include "mgos_timers.h"
+#include "mgos_utils.h"
 
 static void handle_update_post(struct mg_connection *c, int ev, void *p) {
   struct mg_http_multipart_part *mp = (struct mg_http_multipart_part *) p;
