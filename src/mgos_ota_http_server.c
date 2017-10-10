@@ -134,7 +134,7 @@ static void update_handler(struct mg_connection *c, int ev, void *ev_data,
     case MG_EV_HTTP_PART_DATA:
     case MG_EV_HTTP_PART_END:
     case MG_EV_HTTP_MULTIPART_REQUEST_END: {
-      if (get_cfg()->update.enable_post) {
+      if (mgos_sys_config_get_update_enable_post()) {
         handle_update_post(c, ev, ev_data);
       } else {
         mg_send_response_line(c, 400,
@@ -155,9 +155,8 @@ static void update_handler(struct mg_connection *c, int ev, void *ev_data,
         c->flags |= MG_F_SEND_AND_CLOSE;
         return;
       }
-      struct sys_config_update *scu = &get_cfg()->update;
-      char *url = scu->url;
-      int commit_timeout = scu->commit_timeout;
+      const char *url = mgos_sys_config_get_update_url();
+      int commit_timeout = mgos_sys_config_get_update_commit_timeout();
       bool ignore_same_version = true;
       struct mg_str params =
           (mg_vcmp(&hm->method, "POST") == 0 ? hm->body : hm->query_string);
