@@ -3,7 +3,7 @@ description: Implements Mongoose OS OTA HTTP server
 type: lib
 version: 1.0
 
-sources_removed:
+sources:
   - src
 includes:
   - include
