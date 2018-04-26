@@ -5,8 +5,7 @@ version: 1.0
 
 sources:
   - src
-includes:
-  - include
+
 config_schema:
   - ["update.enable_post", "b", true, {title : "Enable POST updates"}]
 
