@@ -19,5 +19,6 @@ tags:
   - ota
   - http
   - rpc
+  - docs:net:OTA via HTTP POST
 
 manifest_version: 2017-09-29
