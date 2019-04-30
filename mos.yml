@@ -10,9 +10,9 @@ config_schema:
   - ["update.enable_post", "b", true, {title : "Enable POST updates"}]
 
 libs:
-  - origin: https://github.com/cesanta/mongoose-os/libs/http-server
-  - origin: https://github.com/cesanta/mongoose-os/libs/ota-common
-  - origin: https://github.com/cesanta/mongoose-os/libs/ota-http-client
+  - origin: https://github.com/cesanta/mongoose-os-libs/http-server
+  - origin: https://github.com/cesanta/mongoose-os-libs/ota-common
+  - origin: https://github.com/cesanta/mongoose-os-libs/ota-http-client
 
 tags:
   - c
